@@ -61,7 +61,7 @@ cacheSolve <- function(x, ...) {
                 }
         }
         if(is.singular.matrix(data)){
-                message("Input Matrix is Singular. Please enter a non-singular Matrix!!")
+                message("Given Matrix is Singular. Please enter a non-singular Matrix!!")
         }
         
         ## Input Matrix is not singular and hence the inverse is calculated.
