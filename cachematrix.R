@@ -1,6 +1,3 @@
-## makeCacheMatrix function creates a "special" matrix that is not singular 
-## and reversible
-
 ## How to use these functions:
 ## res <- makeCacheMatrix(matrix(1:25,nrow=5,ncol=5))
 ## res1 <- makeCacheMatrix(matrix(rnorm(25),nrow=5,ncol=5))
@@ -10,6 +7,8 @@
 ## res1$getInverse()
 
 ## get(), set(), getInverse() and setInverse() are define in makeCacheMatrix
+## makeCacheMatrix function creates a "special" matrix that is not singular 
+## and reversible
 
 makeCacheMatrix <- function(x = matrix()) {
         # m is the temporary holder of the matrix
@@ -19,9 +18,12 @@ makeCacheMatrix <- function(x = matrix()) {
                 m <<- NULL
         }
         get <- function() x
+        
         #setInverse and getInverse sets and gets the inverse of the matrix resp.
         setInverse <- function(solve) m <<- solve
         getInverse <- function() m
+        
+        # Holder for the matrix variants set(), get() and corresponding Inverse()
         list(set = set, get = get,
              setInverse = setInverse,
              getInverse = getInverse)
